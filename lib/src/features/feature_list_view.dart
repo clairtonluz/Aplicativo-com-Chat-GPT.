@@ -10,8 +10,10 @@ class FeatureListView extends StatelessWidget {
   const FeatureListView({
     super.key,
     this.items = const [
-      Feature(1, 'Psicólogo Virtual', PsicologoVirtualView.routeName),
-      Feature(2, 'Personal Virtual', PersonalVirtualView.routeName),
+      Feature(1, 'Psicólogo Virtual', PsicologoVirtualView.routeName,
+          'assets/images/psicologia.webp'),
+      Feature(2, 'Personal Virtual', PersonalVirtualView.routeName,
+          'assets/images/personal-trainer.webp'),
     ],
   });
 
@@ -54,9 +56,9 @@ class FeatureListView extends StatelessWidget {
 
           return ListTile(
               title: Text(item.name),
-              leading: const CircleAvatar(
+              leading: CircleAvatar(
                 // Display the Flutter Logo image asset.
-                foregroundImage: AssetImage('assets/images/flutter_logo.png'),
+                foregroundImage: AssetImage(item.imageUri),
               ),
               onTap: () {
                 // Navigate to the details page. If the user leaves and returns to

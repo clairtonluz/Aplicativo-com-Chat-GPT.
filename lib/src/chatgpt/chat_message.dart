@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mavie/src/chatgpt/chatgpt_service.dart';
-import 'package:mavie/src/psicologo_virtual/psicologo_virtual_view.dart';
 
 class ChatMessage extends StatelessWidget {
   final String text;

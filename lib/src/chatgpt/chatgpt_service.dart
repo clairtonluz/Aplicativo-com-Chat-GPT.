@@ -83,7 +83,7 @@ class ChatGPTService {
       OpenAIChatCompletionChoiceMessageModel(
         content: [
           OpenAIChatCompletionChoiceMessageContentItemModel.text(
-            'Você é um excelente personal trainer!',
+            'Vamos falar apenas sobre exercicios físico, Fale como se fosse um personal trainer profissional.',
           ),
         ],
         role: OpenAIChatMessageRole.system,

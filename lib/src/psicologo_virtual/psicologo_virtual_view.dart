@@ -64,7 +64,9 @@ class _PsicologoVirtualViewState extends State<PsicologoVirtualView> {
             decoration: BoxDecoration(
               color: Theme.of(context).cardColor,
             ),
-            child: _buildTextComposer(),
+            child: Builder(builder: (context) {
+              return _buildTextComposer(context);
+            }),
           ),
         ],
       ),
@@ -72,38 +74,44 @@ class _PsicologoVirtualViewState extends State<PsicologoVirtualView> {
   }
 
   void _handleSubmitted(String text) async {
-    addMessageInChat(chatUser, text);
+    try {
+      addMessageInChat(chatUser, text);
 
-    addMessageInChat(chatBot, '...');
+      addMessageInChat(chatBot, '...');
 
-    final historico =
-        _messages.sublist(0, _messages.length - 2).map((e) => e).toList();
+      final historico =
+          _messages.sublist(0, _messages.length - 2).map((e) => e).toList();
 
-    const index = 0;
+      const index = 0;
 
-    _chatGPTService.chatPsicologo(text, historico).listen((event) {
-      final completation = event.choices.first;
+      _chatGPTService.chatPsicologo(text, historico).listen((event) {
+        final completation = event.choices.first;
 
-      if (completation.index == 0 && completation.delta.content != null) {
-        final response = completation.delta.content;
-        setState(() {
-          final currentText =
-              _messages[index].text == '...' ? '' : _messages[index].text;
-          _messages[index] = ChatMessage(
-            name: chatBot,
-            text: "$currentText${response?.first.text}",
-          );
-        });
-      }
-    });
+        if (completation.index == 0 && completation.delta.content != null) {
+          final response = completation.delta.content;
+          setState(() {
+            final currentText =
+                _messages[index].text == '...' ? '' : _messages[index].text;
+            _messages[index] = ChatMessage(
+              name: chatBot,
+              text: "$currentText${response?.first.text}",
+            );
+          });
+        }
+      });
 
-    _scrollController.animateTo(
-      0,
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeInOut,
-    );
+      _scrollController.animateTo(
+        0,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
 
-    _textController.clear();
+      _textController.clear();
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Erro ao enviar mensagem: $e'),
+      ));
+    }
   }
 
   void addMessageInChat(String username, String text) {
@@ -117,7 +125,7 @@ class _PsicologoVirtualViewState extends State<PsicologoVirtualView> {
     });
   }
 
-  Widget _buildTextComposer() {
+  Widget _buildTextComposer(BuildContext context) {
     return IconTheme(
       data: IconThemeData(color: Theme.of(context).colorScheme.secondary),
       child: Container(

@@ -9,7 +9,7 @@ const chatUser = 'Você';
 
 class ChatGPTService {
   init() {
-    OpenAI.apiKey = Env.apiKey;
+    // OpenAI.apiKey = Env.apiKey;
     OpenAI.organization = Env.organizationId;
     OpenAI.requestsTimeOut = const Duration(seconds: 60);
     // OpenAI.baseUrl = "https://api.openai.com/v1"; // the default one.

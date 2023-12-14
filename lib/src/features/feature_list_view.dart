@@ -52,11 +52,9 @@ class FeatureListView extends StatelessWidget {
                       e.routeName,
                     )
                   },
-                  child: Expanded(
-                    child: ProfileWidget(
-                      imageUrl: e.imageUri,
-                      name: e.name,
-                    ),
+                  child: ProfileWidget(
+                    imageUrl: e.imageUri,
+                    name: e.name,
                   ),
                 ),
               )

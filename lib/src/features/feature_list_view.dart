@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mavie/src/colors.dart';
 import 'package:mavie/src/personal_virtual/personal_virtual_view.dart';
 import 'package:mavie/src/profile/profile_widget.dart';
 import 'package:mavie/src/psicologo_virtual/psicologo_virtual_view.dart';

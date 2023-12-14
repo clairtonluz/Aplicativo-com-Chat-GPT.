@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:mavie/src/colors.dart';
 import 'package:mavie/src/personal_virtual/personal_virtual_view.dart';
 import 'package:mavie/src/psicologo_virtual/psicologo_virtual_view.dart';
 
@@ -59,16 +60,16 @@ class MyApp extends StatelessWidget {
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
           theme: ThemeData(
-            primarySwatch: Colors.deepPurple,
+            primarySwatch: primarySwatch,
             appBarTheme: const AppBarTheme(
-              backgroundColor: Colors.deepPurple,
+              backgroundColor: primaryColor,
               titleTextStyle: TextStyle(
-                color: Colors.white,
+                color: onPrimaryColor,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
               iconTheme: IconThemeData(
-                color: Colors.white,
+                color: onPrimaryColor,
               ),
             ),
           ),

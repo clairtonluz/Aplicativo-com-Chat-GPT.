@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mavie/src/chatgpt/chatgpt_service.dart';
+import 'package:mavie/src/colors.dart';
 
 class ChatMessage extends StatelessWidget {
   final String text;
@@ -23,7 +24,7 @@ class ChatMessage extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
-                    color: isBot ? Colors.green : Colors.blue,
+                    color: isBot ? secondaryColor : primaryColor,
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(8.0),
                       topRight: Radius.circular(8.0),

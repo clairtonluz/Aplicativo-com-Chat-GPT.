@@ -10,9 +10,9 @@ class FeatureListView extends StatelessWidget {
   const FeatureListView({
     super.key,
     this.items = const [
-      Feature(1, 'Psicólogo Virtual', PsicologoVirtualView.routeName,
+      Feature(1, 'Converse com a Mavie', PsicologoVirtualView.routeName,
           'assets/images/psicologia.webp'),
-      Feature(2, 'Personal Virtual', PersonalVirtualView.routeName,
+      Feature(2, 'Exercite-se com a Mavie', PersonalVirtualView.routeName,
           'assets/images/personal-trainer.webp'),
     ],
   });

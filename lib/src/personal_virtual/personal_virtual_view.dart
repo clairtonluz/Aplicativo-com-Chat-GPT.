@@ -37,7 +37,7 @@ ex:
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        title: const Text('Personal Trainer Virtual'),
+        title: const Text('Exercite-se com a Mavie'),
       ),
       body: Column(
         children: [

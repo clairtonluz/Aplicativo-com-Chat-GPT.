@@ -4,6 +4,7 @@ const Color primaryColor = Color(0xFF4D2579);
 const Color onPrimaryColor = Colors.white;
 const Color secondaryColor = Color(0xFF15808B);
 const Color onSecondaryColor = Colors.white;
+const Color accentColor = Colors.pink;
 
 MaterialColor primarySwatch = createMaterialColor(primaryColor);
 
@@ -16,7 +17,7 @@ MaterialColor createMaterialColor(Color color) {
     strengths.add(0.1 * i);
   }
 
-  strengths.forEach((strength) {
+  for (var strength in strengths) {
     final double ds = 0.5 - strength;
     swatch[(strength * 1000).round()] = Color.fromRGBO(
       r + ((ds < 0 ? r : (255 - r)) * ds).round(),
@@ -24,6 +25,6 @@ MaterialColor createMaterialColor(Color color) {
       b + ((ds < 0 ? b : (255 - b)) * ds).round(),
       1,
     );
-  });
+  }
   return MaterialColor(color.value, swatch);
 }

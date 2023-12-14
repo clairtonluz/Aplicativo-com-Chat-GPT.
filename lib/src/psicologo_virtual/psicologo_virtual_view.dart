@@ -33,7 +33,7 @@ class _PsicologoVirtualViewState extends State<PsicologoVirtualView> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        title: const Text('Psicólogo Virtual'),
+        title: const Text('Converse com a Mavie'),
       ),
       body: Column(
         children: [

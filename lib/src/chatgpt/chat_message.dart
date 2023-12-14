@@ -24,7 +24,7 @@ class ChatMessage extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
-                    color: isBot ? secondaryColor : primaryColor,
+                    color: isBot ? secondaryColor : accentColor,
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(8.0),
                       topRight: Radius.circular(8.0),

@@ -16,7 +16,8 @@ class _PsicologoVirtualViewState extends State<PsicologoVirtualView> {
   final ChatGPTService _chatGPTService = ChatGPTService();
   final List<ChatMessage> _messages = <ChatMessage>[
     const ChatMessage(name: chatBot, text: 'Fale o que está sentindo...'),
-    const ChatMessage(name: chatBot, text: 'Bem vindo ao Psicólogo Virtual!'),
+    const ChatMessage(
+        name: chatBot, text: 'Olá eu sou a Mavie, sua psicologa virtual.'),
   ];
   final TextEditingController _textController = TextEditingController();
   final _scrollController = ScrollController();

@@ -20,7 +20,7 @@ ex:
   "treino para perder a barriga"
   "cronograma de treino para emagrecer com duração de 60 minutos e 3 vezes por semana"'''),
     const ChatMessage(
-        name: chatBot, text: 'Bem vindo ao Personal Trainer Virtual!'),
+        name: chatBot, text: 'Ola eu sou a Mavie, sua personal virtual.'),
   ];
   final TextEditingController _textController = TextEditingController();
   final _scrollController = ScrollController();
